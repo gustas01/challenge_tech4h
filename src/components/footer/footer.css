@@ -1,7 +1,7 @@
 .footer{
     position: absolute;
     bottom: 0%;
-    background-color: #343A40;
+    background-color: #4a535a;
     width: 100%;
     padding: var(--small-padding);
     display: flex;

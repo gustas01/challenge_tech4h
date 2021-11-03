@@ -1,7 +1,7 @@
 .wholeRightPanel{
     background-color: #ddd;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     box-shadow: 0 0 10px rgb(0, 0, 0, 0.6);
     border-radius: 10px;
     padding: var(--small-padding);
