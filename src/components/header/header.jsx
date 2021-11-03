@@ -4,8 +4,8 @@ import {MdOutlineLocationCity} from 'react-icons/md'
 
 export default function Header(){
     return (
-        <section className="wholeHeader">
+        <header className="wholeHeader">
             <h1> <MdOutlineLocationCity/> Cidade Climas</h1>
-        </section>
+        </header>
     )
 }
