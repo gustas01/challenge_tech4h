@@ -1,0 +1,50 @@
+:root{
+    --big-font-size: 1.2rem;
+    --small-padding: 5px
+}
+
+
+.wholePanel{
+    background-color: #ddd;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    box-shadow: 0 0 10px rgb(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: var(--small-padding);
+}
+
+.formSearch{
+    width: 100%;
+    display: flex;
+    align-self: center;
+    padding: var(--small-padding);
+}
+
+.formSearch input{
+    border-radius: 5px;
+    outline: 0;
+    padding: var(--small-padding);
+    font-size: var(--big-font-size);
+    flex: 1;
+}
+
+.formSearch button{
+    padding: var(--small-padding);
+    font-size: var(--big-font-size);
+    background-color: #343A40;
+    color: white;
+    border-radius: 10px;
+}
+
+.formSearch button:hover{
+    background-color: #424850;
+    transform: scale(1.02);
+}
+
+.cityInfos{
+    display: flex;
+    flex-direction: column;
+    padding: var(--small-padding);
+    gap: 5px;
+}

@@ -1,0 +1,22 @@
+.globalContainer{
+  background-color: #ccc;
+  display: flex;
+  flex-direction: column;
+}
+
+.panels{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* grid-template-columns: repeat(2, minmax(370px, 1fr)); */
+  min-width: 300px;
+  padding: 10px;
+  column-gap: 10px;
+  margin-top: 3%;
+}
+
+
+@media(max-width: 760px){
+  .panels{
+    grid-template-columns: 1fr;
+  }
+}
