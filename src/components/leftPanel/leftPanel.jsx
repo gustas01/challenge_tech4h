@@ -10,7 +10,7 @@ export default function LeftPanel(){
     })
 
     return (
-        <section className="wholePanel">
+        <section className="wholeLeftPanel">
             <form action="/" method="POST" className="formSearch">
                 <input type="text" placeholder="Digite o nome da cidade"/>
                 <button type="submit">Pesquisar</button>
@@ -18,11 +18,11 @@ export default function LeftPanel(){
 
             <div className="cityInfos">
                 {/* aqui fazer um map com as informçãoes das cidades vindas do back*/}
-                <label htmlFor="">Cidade</label>
-                <label htmlFor="">País</label>
-                <label htmlFor="">Temperatura atual</label>
-                <label htmlFor="">Umidade</label>
-                <label htmlFor="">Clima</label>
+                <p htmlFor="">Cidade</p>
+                <p htmlFor="">País</p>
+                <p htmlFor="">Temperatura atual</p>
+                <p htmlFor="">Umidade</p>
+                <p htmlFor="">Clima</p>
             </div>
 
         </section>

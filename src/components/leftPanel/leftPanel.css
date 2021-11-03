@@ -1,10 +1,4 @@
-:root{
-    --big-font-size: 1.2rem;
-    --small-padding: 5px
-}
-
-
-.wholePanel{
+.wholeLeftPanel{
     background-color: #ddd;
     display: flex;
     flex-direction: column;

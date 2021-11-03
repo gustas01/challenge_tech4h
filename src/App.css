@@ -1,3 +1,15 @@
+*{
+  margin: 0;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+:root{
+  --big-font-size: 1.2rem;
+  --small-padding: 5px
+}
+
+
 .globalContainer{
   background-color: #ccc;
   display: flex;
