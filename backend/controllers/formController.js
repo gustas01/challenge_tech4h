@@ -6,5 +6,5 @@ exports.retornaDados = (req, res) => {
     // axios.get(url)
     //     .then((response) => res.send(response))
     //     .catch((err) => console.log(err))
-   return res.json({"mensagem": "Requisição POST recebidaaass"})
+   return res.send({"mensagem": "Requisição POST recebidaaass"})
 }

@@ -1,19 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import './leftPanel.css'
+import axios from 'axios'
 
 export default function LeftPanel(){
 
     const [cityData, setCityData] = useState({})
-    
-    useEffect(() => {
-        // setar os dados vindos do back no state aqui
-    })
+
+    function handleClick(e){
+        e.preventDefault()
+
+        axios.get('/').then((dados) => {
+            setCityData(dados.data)
+            console.log(dados.data)
+        })
+    }
 
     return (
         <section className="wholeLeftPanel">
-            <form action="/" method="POST" className="formSearch">
-                <input type="text" placeholder="Digite o nome da cidade"/>
-                <button type="submit">Pesquisar</button>
+            <form method="POST" className="formSearch">
+                <input type="text" name="cityName" placeholder="Digite o nome da cidade"/>
+                <button type="submit" onClick={handleClick}>Pesquisar</button>
             </form>
 
             <div className="cityInfos">
