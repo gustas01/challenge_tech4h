@@ -4,31 +4,39 @@ import axios from 'axios'
 
 export default function LeftPanel(){
 
+    const [cityName, setCityName] = useState('')
     const [cityData, setCityData] = useState({})
 
-    function handleClick(e){
+
+    function handleChange(e){
+        setCityName(e.target.value)
+    }
+
+    async function handleClick(e){
         e.preventDefault()
 
-        axios.get('/').then((dados) => {
-            setCityData(dados.data)
-            console.log(dados.data)
-        })
+        try{
+            const response = await axios.post('/', {cityName})
+            setCityData(response.data)
+            console.log(cityData)
+        }catch(error){
+            console.log(error)
+        }
     }
 
     return (
         <section className="wholeLeftPanel">
-            <form method="POST" className="formSearch">
-                <input type="text" name="cityName" placeholder="Digite o nome da cidade"/>
+            <form  className="formSearch">
+                <input type="text" name="cityName" placeholder="Digite o nome da cidade" onChange={handleChange}/>
                 <button type="submit" onClick={handleClick}>Pesquisar</button>
             </form>
 
             <div className="cityInfos">
-                {/* aqui fazer um map com as informçãoes das cidades vindas do back*/}
-                <p htmlFor="">Cidade</p>
-                <p htmlFor="">País</p>
-                <p htmlFor="">Temperatura atual</p>
-                <p htmlFor="">Umidade</p>
-                <p htmlFor="">Clima</p>
+                <p htmlFor="">Cidade: {cityData?.name}</p>
+                <p htmlFor="">País: {cityData.sys?.country}</p>
+                <p htmlFor="">Temperatura atual: {(cityData.main?.temp - 273)}</p>
+                <p htmlFor="">Umidade: {cityData.main?.humidity}</p>
+                <p htmlFor="">Clima: {cityData.weather?[0].description}</p>
             </div>
 
         </section>
