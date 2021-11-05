@@ -34,8 +34,8 @@ export default function LeftPanel(){
             <div className="cityInfos">
                 <p htmlFor="">Cidade: {cityData?.name}</p>
                 <p htmlFor="">País: {cityData.sys?.country}</p>
-                <p htmlFor="">Temperatura atual: {(cityData.main?.temp && cityData.main?.temp - 273 ).toFixed(2)} °C</p>
-                <p htmlFor="">Umidade: {cityData.main?.humidity} %</p>
+                <p htmlFor="">Temperatura atual: {(cityData.main?.temp ? (cityData.main?.temp - 273).toFixed(2) + '°C' : '')}</p>
+                <p htmlFor="">Umidade: {cityData.main?.humidity ? cityData.main?.humidity + '%' : ''} </p>
                 <p htmlFor="">Clima: {cityData.weather?.[0].description}</p>
             </div>
             
