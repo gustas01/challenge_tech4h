@@ -18,7 +18,6 @@ export default function LeftPanel(){
         try{
             const response = await axios.post('/', {cityName})
             setCityData(response.data)
-            console.log(cityData)
         }catch(error){
             console.log(error)
         }
@@ -31,13 +30,15 @@ export default function LeftPanel(){
                 <button type="submit" onClick={handleClick}>Pesquisar</button>
             </form>
 
+           
             <div className="cityInfos">
                 <p htmlFor="">Cidade: {cityData?.name}</p>
                 <p htmlFor="">País: {cityData.sys?.country}</p>
-                <p htmlFor="">Temperatura atual: {(cityData.main?.temp - 273)}</p>
-                <p htmlFor="">Umidade: {cityData.main?.humidity}</p>
-                <p htmlFor="">Clima: {cityData.weather?[0].description}</p>
+                <p htmlFor="">Temperatura atual: {(cityData.main?.temp && cityData.main?.temp - 273 ).toFixed(2)} °C</p>
+                <p htmlFor="">Umidade: {cityData.main?.humidity} %</p>
+                <p htmlFor="">Clima: {cityData.weather?.[0].description}</p>
             </div>
+            
 
         </section>
     )
