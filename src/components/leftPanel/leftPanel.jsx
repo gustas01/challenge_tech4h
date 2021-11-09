@@ -23,6 +23,7 @@ export default function LeftPanel(){
         }
     }
 
+
     return (
         <section className="wholeLeftPanel">
             <form  className="formSearch">

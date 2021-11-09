@@ -4,15 +4,16 @@ import axios from 'axios'
 
 export default function RightPanel(){
 
-    const [cityData, setCityData] = useState()
+    const [recentlyCities, setrecentlyCities] = useState([])
+    const [popularCities, setPopularCities] = useState([])
+
 
     useEffect(() => {
-        axios.get('/contato').then(response => setCityData(response.data))
-
+        axios.get('/recentlySearchedCitiesDatas').then(response => setrecentlyCities(response.data))
+        axios.get('/popularCitiesData').then(response => setPopularCities(response.data))
     },[])
 
-
-console.log('state = ', cityData)
+console.log(popularCities)
 
     return (
         <section className="wholeRightPanel">
@@ -27,12 +28,11 @@ console.log('state = ', cityData)
             </div>
 
             <div className="ultimasBuscadas">
-                <h3>Cidades buscadas recentemente</h3>
-                <p>{cityData?.[0].name}</p>
-                <p>{cityData?.[1].name}</p>
-                <p>{cityData?.[2].name}</p>
-                <p>{cityData?.[3].name}</p>
-                <p>{cityData?.[4].name}</p>
+                <h3>Buscas recentes</h3>
+                {recentlyCities.map((val, index) => {
+                    if(index < 5)
+                    return <p key={index} >{val.name}</p>})
+                }
                 
             </div>
         </section>

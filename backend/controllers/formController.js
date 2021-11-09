@@ -12,21 +12,24 @@ exports.retornaDados = async (req, res) => {
     const response = weatherData.data
 
   
-    const weatherDataToDB = await salvarNaTabela(response.name, response.sys.country, (response.main.temp - 273).toFixed(2), response.main.humidity, response.weather[0].description)
+    await salvarNaTabela(response.name, response.sys.country, (response.main.temp - 273).toFixed(2), response.main.humidity, response.weather[0].description)
 
 
-    const dadosFront = await Cidade.findAll({
-        attributes: ['name', 'country', 'mainTemp', 'humidity', 'weather']
-     })
-
-    const dadosTratados = dadosFront.map(function(el) { return el.dataValues }).reverse()
 
 
-    return res.send(dadosTratados)
-}
+    // const filtroNames = await Cidade.findAll({
+    //     attributes: ['name']
+    // })
+
+    // const names = filtroNames.map(function (el) {return el.dataValues.name})
+    
+    // const repeatedCities = filtroNames.filter((el) => el === req.body )
+
+    // if(repeatedCities) 
+    
 
 
-exports.dadosRightPanel = async (req, res) => {
+
     const dadosFront = await Cidade.findAll({
         attributes: ['name', 'country', 'mainTemp', 'humidity', 'weather']
      })
