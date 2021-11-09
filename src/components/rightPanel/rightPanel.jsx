@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import './rightPanel.css'
 import axios from 'axios'
 
+
 export default function RightPanel(){
 
     const [recentlyCities, setrecentlyCities] = useState([])
@@ -12,7 +13,6 @@ export default function RightPanel(){
         axios.get('/recentlySearchedCitiesDatas').then(response => setrecentlyCities(response.data))
         axios.get('/popularCitiesData').then(response => setPopularCities(response.data))
     },[])
-
 
 
     return (
@@ -29,9 +29,9 @@ export default function RightPanel(){
 
             <div className="ultimasBuscadas">
                 <h3>Buscas recentes</h3>
-                {recentlyCities.map((val, index) => {
+                {recentlyCities.map((name, index) => {
                     if(index < 5)
-                        return <p key={index}> {val.name} </p>
+                        return <p key={index}> {name} </p>
                         return ''
                     })
                 }
