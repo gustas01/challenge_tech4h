@@ -20,11 +20,11 @@ console.log(popularCities)
             
             <div className="maisBuscadas">
                 <h3>Cidades mais buscadas</h3>
-                <p>Teófilo Otoni</p>
-                <p>Governador Valadares</p>
-                <p>Nova Iorque</p>
-                <p>Londres</p>
-                <p>Seoul</p>
+                <p>Cidade 1</p>
+                <p>Cidade 2</p>
+                <p>Cidade 3</p>
+                <p>Cidade 4</p>
+                <p>Cidade 5</p>
             </div>
 
             <div className="ultimasBuscadas">
