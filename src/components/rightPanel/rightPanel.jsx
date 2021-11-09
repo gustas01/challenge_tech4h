@@ -13,7 +13,7 @@ export default function RightPanel(){
         axios.get('/popularCitiesData').then(response => setPopularCities(response.data))
     },[])
 
-console.log(popularCities)
+
 
     return (
         <section className="wholeRightPanel">
@@ -31,7 +31,9 @@ console.log(popularCities)
                 <h3>Buscas recentes</h3>
                 {recentlyCities.map((val, index) => {
                     if(index < 5)
-                    return <p key={index} >{val.name}</p>})
+                        return <p key={index}> {val.name} </p>
+                        return ''
+                    })
                 }
                 
             </div>
