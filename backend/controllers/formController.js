@@ -1,12 +1,13 @@
 const { default: axios } = require('axios')
-const salvarNaTabela = require('../tables/cidadeTabela')
+const salvarNaTabela = require('../entries/cidadeTabela')
 const Cidade = require('../models/cidade')
+require('dotenv').config()
 
 exports.retornaDados = async (req, res) => {
     const {cityName} = req.body
     
     const cityNameComplete = cityName.split(' ').join('+')
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityNameComplete}&appid=431742a70c1841a5f481a711fa373143`
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityNameComplete}&appid=${process.env.TOKENAPI}`
 
     try{
         const weatherData = await axios.get(url)
@@ -15,30 +16,6 @@ exports.retornaDados = async (req, res) => {
     }catch(err){
         console.log(err)
     }
-
-  
-    
-    
-    //para não salvar cidades repetidas no banco
-    // try{
-    //     const filtroNames = await Cidade.findAll({
-    //         attributes: ['name']
-    //     })
-        
-    //     const names = filtroNames.map(function (el) {return el.dataValues.name})
-    //     const repeatedCities = filtroNames.filter((el) => el === req.body )
-
-    //     if(repeatedCities) 
-    //         Cidade.destroy({
-    //             where: {
-    //                 name: response.name
-    //             }
-    //         })
-        
-        
-    // }catch(err){console.log(err)}
-
-    
 
 
 

@@ -12,6 +12,8 @@ export default function RightPanel(){
     useEffect(() => {
         axios.get('/recentlySearchedCitiesDatas').then(response => setrecentlyCities(response.data))
         axios.get('/popularCitiesData').then(response => setPopularCities(response.data))
+        
+        console.log('teste')
     },[])
 
 
@@ -20,11 +22,13 @@ export default function RightPanel(){
             
             <div className="maisBuscadas">
                 <h3>Cidades mais buscadas</h3>
-                <p>Cidade 1</p>
-                <p>Cidade 2</p>
-                <p>Cidade 3</p>
-                <p>Cidade 4</p>
-                <p>Cidade 5</p>
+                {popularCities.map((city, index) => {
+                    if(index < 5) 
+                        return <p key={index}> {city.name}</p>
+                        return ''
+                })
+            }
+            
             </div>
 
             <div className="ultimasBuscadas">
