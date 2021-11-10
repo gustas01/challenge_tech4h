@@ -13,7 +13,7 @@ export default function RightPanel(){
         axios.get('/recentlySearchedCitiesDatas').then(response => setrecentlyCities(response.data))
         axios.get('/popularCitiesData').then(response => setPopularCities(response.data))
         
-        console.log('teste')
+        
     },[])
 
 
