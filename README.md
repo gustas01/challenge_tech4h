@@ -18,5 +18,3 @@ TOKENAPI - o token de api que você pode criar gratuitamente, e está disponíve
 5º passo - Depois que aparecer a mensagem 'servidor executando na porta 4000', vá para o outro terminal dentro da pasta raiz do projeto, que é a challenge_tech4h, e execute 'npm start' para que o frontend seja executado. (certifique-se de que as portas 4000 e 3000 já não estão sendo usadas por outra aplicação)
 
 6º passo - Aguarde até que a interface seja exibida, logo após, é só usar a aplicação.
-
-OBS: Para que o painél da direita seja atualizado após a busca por uma cidade, você deve atualizar a página ou apertar F5. Não consegui implementar essa atualização automática a tempo para o prazo de entrega. Mas todos os dados serão salvos e buscados no banco normalmente e exibido no painel da direita, somente o painél da esquerda que está com esse detalhe.
