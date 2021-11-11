@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import './leftPanel.css'
 import axios from 'axios'
 
-export default function LeftPanel(){
-
+export default function LeftPanel({updateRightPanel}){
+    
     const [cityName, setCityName] = useState('')
     const [cityData, setCityData] = useState()
 
@@ -12,23 +12,25 @@ export default function LeftPanel(){
         setCityName(e.target.value)
     }
 
-    async function handleClick(e){
+    async function onUpdate(e){
         e.preventDefault()
-
+        
         try{
             const response = await axios.post('/', {cityName})
             setCityData(response.data)
+            updateRightPanel()
         }catch(error){
             console.log(error)
         }
     }
 
 
+
     return (
         <section className="wholeLeftPanel">
             <form  className="formSearch">
                 <input type="text" name="cityName" placeholder="Digite o nome da cidade" onChange={handleChange}/>
-                <button type="submit" onClick={handleClick}>Pesquisar</button>
+                <button type="submit" onClick={onUpdate}>Pesquisar</button>
             </form>
            
             <div className="cityInfos">

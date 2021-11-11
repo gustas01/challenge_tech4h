@@ -1,21 +1,8 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import './rightPanel.css'
-import axios from 'axios'
 
 
-export default function RightPanel(){
-
-    const [recentlyCities, setrecentlyCities] = useState([])
-    const [popularCities, setPopularCities] = useState([])
-
-
-    useEffect(() => {
-        axios.get('/recentlySearchedCitiesDatas').then(response => setrecentlyCities(response.data))
-        axios.get('/popularCitiesData').then(response => setPopularCities(response.data))
-        
-        
-    },[])
-
+export default function RightPanel({recentlyCities, popularCities}){
 
     return (
         <section className="wholeRightPanel">
