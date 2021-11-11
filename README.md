@@ -9,7 +9,7 @@ PORT - a porta onde seu banco está ounvido as requisições <br>
 DBNAME - o nome do banco que usará para salvar os dados <br>
 TOKENAPI - o token de api que você pode criar gratuitamente, e está disponível no endereço https://home.openweathermap.org/api_keys, desde que você esteja logado no site. <br>
 
-2º passo - Instale as dependências do projeto, com o comando 'npm i' em um terminal aberto na pasta raiz do projeto.
+2º passo - Instale as dependências do projeto, com o comando 'npm i' em um terminal aberto na pasta raiz do projeto, e execute o comando novamente dentro da pasta backend.
 
 3º passo - Para executar o projeto completo, você irá precisar de 2 abas de terminal (prompt, powershell, ou qualquer outro), uma delas para executar a parte de backend e outro para o frontend.
 
