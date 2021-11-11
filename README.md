@@ -1,7 +1,7 @@
 # challenge_tech4h
 
 # Instruções para a execução do projeto. 
-OBS: O Node deve estar instalado na máquina onde será executado o projeto.
+OBS: O Node e o PostgresSQL devem estar instalados na máquina onde será executado o projeto.
 
 1º passo - Preencha o arquivo .env que está dentro da pasta backend com todas as informações que pedem lá, colocando o valor logo após o sinal de igualdade, sem aspas. Que são:<br> USER - o nome do usuário do banco de dados <br>
 PASSWORD - a senha do banco de dados <br>
