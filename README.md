@@ -13,7 +13,7 @@ TOKENAPI - o token de api que você pode criar gratuitamente, e está disponíve
 
 3º passo - Para executar o projeto completo, você irá precisar de 2 abas de terminal (prompt, powershell, ou qualquer outro), uma delas para executar a parte de backend e outro para o frontend.
 
-4º passo - Em uma das abas do terminal, entre na pasta backend dentro do proejeto (com 'cd backend', sem aspas), e execute o comando 'npm start', sem aspas.
+4º passo - Em uma das abas do terminal, entre na pasta backend dentro do proejeto (com o comando 'cd backend', sem aspas), e execute o comando 'npm start', sem aspas.
 
 5º passo - Depois que aparecer a mensagem 'servidor executando na porta 4000', vá para o outro terminal dentro da pasta raiz do projeto, que é a challenge_tech4h, e execute 'npm start' para que o frontend seja executado. (certifique-se de que as portas 4000 e 3000 já não estão sendo usadas por outra aplicação)
 
