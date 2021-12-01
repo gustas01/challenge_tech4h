@@ -17,6 +17,10 @@ export default function LeftPanel({updateRightPanel}){
         
         try{
             const response = await axios.post('/', {cityName})
+            if(Object.keys(response.data).length === 0){
+                alert("Cidade inválida!")
+                return
+            }
             setCityData(response.data)
             updateRightPanel()
         }catch(error){
@@ -34,11 +38,11 @@ export default function LeftPanel({updateRightPanel}){
             </form>
            
             <div className="cityInfos">
-                <p htmlFor="">Cidade: {cityData?.[0].name}</p>
-                <p htmlFor="">País: {cityData?.[0].country}</p>
-                <p htmlFor="">Temperatura atual: {(cityData?.[0].mainTemp ? (cityData?.[0].mainTemp).toFixed(2) + '°C' : '')}</p>
-                <p htmlFor="">Umidade: {cityData?.[0].humidity ? cityData?.[0].humidity + '%' : ''} </p>
-                <p htmlFor="">Clima: {cityData?.[0].weather}</p>
+                <p htmlFor="">Cidade: {cityData?.name}</p>
+                <p htmlFor="">País: {cityData?.country}</p>
+                <p htmlFor="">Temperatura atual: {(cityData?.mainTemp ? (cityData?.mainTemp).toFixed(2) + '°C' : '')}</p>
+                <p htmlFor="">Umidade: {cityData?.humidity ? cityData?.humidity + '%' : ''} </p>
+                <p htmlFor="">Clima: {cityData?.weather}</p>
             </div>
             
 

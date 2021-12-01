@@ -9,13 +9,12 @@ exports.recentlySearchedCitiesDatas = async (req, res) => {
     const repeatedData = dadosFront.map(function(el) { return el.dataValues.name }).reverse()
 
     const dadosTratados = [... new Set(repeatedData)] //eliminando renderização de repetições no frontend
-
-    return res.send(dadosTratados) //retornando um array de cityNames
+    return res.send(dadosTratados.slice(0, 5)) //retornando um array de cityNames
 }
 
 
 exports.popularCitiesData = async (req, res) => {
-
+    
     try{
         const citiesData = await Cidade.findAll({
             attributes: [
@@ -23,14 +22,15 @@ exports.popularCitiesData = async (req, res) => {
                 [sequelize.fn('COUNT', sequelize.col('name')), 'occurrences'],
             ],
             group: ['name'],
-    })
-
-
-    const orderedCitiesData = citiesData.sort((a, b) => a.dataValues.occurrences - b.dataValues.occurrences).reverse()
-
-    const mostPopularCities = orderedCitiesData.map(el => el.dataValues)
-
-    return res.send(mostPopularCities) //retornando um objeto {name: 'cityName', occurrencies: numberOfOccurrences}
+        })
+        
+        
+        const orderedCitiesData = citiesData.sort((a, b) => a.dataValues.occurrences - b.dataValues.occurrences).reverse()
+        
+        const mostPopularCities = orderedCitiesData.map(el => el.dataValues)
+        
+        
+    return res.send(mostPopularCities.slice(0, 5)) //retornando um objeto {name: 'cityName', occurrencies: numberOfOccurrences}
     }
     catch(err){console.log(err)}
 }

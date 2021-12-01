@@ -9,10 +9,8 @@ export default function RightPanel({recentlyCities, popularCities}){
             
             <div className="maisBuscadas">
                 <h3>Cidades mais buscadas</h3>
-                {popularCities.map((city, index) => {
-                    if(index < 5) 
+                {popularCities.map((city, index) => {                    
                         return <p key={index}> {city.name}</p>
-                        return ''
                 })
             }
             
@@ -21,9 +19,7 @@ export default function RightPanel({recentlyCities, popularCities}){
             <div className="ultimasBuscadas">
                 <h3>Buscas recentes</h3>
                 {recentlyCities.map((name, index) => {
-                    if(index < 5)
                         return <p key={index}> {name} </p>
-                        return ''
                     })
                 }
                 
