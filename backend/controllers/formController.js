@@ -9,17 +9,17 @@ exports.retornaDados = async (req, res) => {
 
     const cityNameComplete = cityName.split(' ').join('+').normalize('NFD').replace(/[\u0300-\u036f]/g, "")
     
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityNameComplete}&appid=${process.env.TOKENAPI}`
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityNameComplete}&units=metric&appid=${process.env.TOKENAPI}`
 
     try{
         const weatherData = await axios.get(url)
         const response = weatherData.data
 
-        await salvarNaTabela(response.name, response.sys.country, (response.main.temp - 273).toFixed(2), response.main.humidity, response.weather[0].description)
+        await salvarNaTabela(response.name, response.sys.country, (response.main.temp).toFixed(2), response.main.humidity, response.weather[0].description)
         dadosTratados = {
             name: await response.name,
             country: await response.sys.country,
-            mainTemp: await response.main.temp - 273,
+            mainTemp: await response.main.temp,
             humidity: response.main.humidity,
             weather: response.weather[0].description 
     }
