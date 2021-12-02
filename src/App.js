@@ -13,13 +13,11 @@ function App() {
   const [popularCities, setPopularCities] = useState([])
 
 useEffect(() => {
-    axios.get('/recentlySearchedCitiesDatas').then(response => setrecentlyCities(response.data))
-    axios.get('/popularCitiesData').then(response => setPopularCities(response.data))        
-    console.log('passando no useEffect')
+    updateData()      
 },[])
   
  
- function updateData(e){
+ function updateData(){
       try{
           axios.get('/recentlySearchedCitiesDatas').then(response => setrecentlyCities(response.data))
           axios.get('/popularCitiesData').then(response => setPopularCities(response.data))
