@@ -1,4 +1,9 @@
 # challenge_tech4h
+<h2>Sobre o projeto</h2>
+É um projeto que busca a armazena informações climáticas sobre determinadas cidades.
+A aplicação consiste em 2 painéis: o da esquerda mostra as informações sobre a cidade buscada no formulário; e o da direita exibe 2 listas: uma listando as cidades mais buscadas, e a outra as mais recentemente pesquisadas.
+
+
 
 # Instruções para a execução do projeto. 
 OBS: O Node e o PostgresSQL devem estar instalados na máquina onde será executado o projeto.
