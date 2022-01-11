@@ -10,9 +10,9 @@ Aplicação com cidades pesquisadas <br>
 <img src="imgs/full-form.png"></img> <br>
 
 <h3>Tecnologia usadas</h3>
-Para o backend, foram usadas: NodeJS, ExpxessJS, SequelizeORM.
-Para o frontend, foram usadas: ReactJS.
-Banco de dados usado: PostgreSQL <br><br>
+Para o backend, foram usadas: NodeJS, ExpxessJS, SequelizeORM. <br>
+Para o frontend, foram usadas: ReactJS. <br> 
+Banco de dados usado: PostgreSQL. <br><br>
 
 # Instruções para a execução do projeto. 
 OBS: O Node e o PostgresSQL devem estar instalados na máquina onde será executado o projeto.
