@@ -1,9 +1,18 @@
 # challenge_tech4h
 <h2>Sobre o projeto</h2>
 É um projeto que busca a armazena informações climáticas sobre determinadas cidades.
-A aplicação consiste em 2 painéis: o da esquerda mostra as informações sobre a cidade buscada no formulário; e o da direita exibe 2 listas: uma listando as cidades mais buscadas, e a outra as mais recentemente pesquisadas.
+A aplicação consiste em 2 painéis: o da esquerda mostra as informações sobre a cidade buscada no formulário; e o da direita exibe 2 listas: uma listando as cidades mais buscadas, e a outra as mais recentemente pesquisadas. <br><br>
 
+Aplicação com banco de dados vazio <br>
+<img src="imgs/empty-form.png"></img> <br>
 
+Aplicação com cidades pesquisadas <br>
+<img src="imgs/full-form.png"></img> <br>
+
+<h3>Tecnologia usadas</h3>
+Para o backend, foram usadas: NodeJS, ExpxessJS, SequelizeORM.
+Para o frontend, foram usadas: ReactJS.
+Banco de dados usado: PostgreSQL <br><br>
 
 # Instruções para a execução do projeto. 
 OBS: O Node e o PostgresSQL devem estar instalados na máquina onde será executado o projeto.
