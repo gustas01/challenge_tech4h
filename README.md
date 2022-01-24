@@ -33,7 +33,8 @@ DB_PORT=
 # o nome do banco que usará para salvar os dados (criado no passo anterior).
 DB_DBNAME=
 
-# o token de api que você pode criar gratuitamente no endereço https://home.openweathermap.org/api_keys, logado no site.
+# o token de api que você pode criar gratuitamente no endereço https://home.openweathermap.org/api_keys,
+# logado no site.
 TOKENAPI= 
 ```
 3º passo - Instale as dependências do projeto, com o comando `npm i` em um terminal aberto na pasta raiz do projeto, e execute o comando novamente dentro da pasta backend.
